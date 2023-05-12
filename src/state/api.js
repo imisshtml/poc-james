@@ -17,7 +17,7 @@ const fetchData = async (obj) => {
     );
     if (response.status === 200) {
       const responseJson = await response.json();
-      return responseJson[0];
+      return responseJson;
     }
     return null;
   } catch (e) {

@@ -27,12 +27,11 @@ const useData = () => {
       };
     });
     const result = await getDelayedData();
-    const arr = Object.values(result);
     setData((prev) => {
       return {
         ...prev,
         loading: false,
-        list: arr,
+        list: result,
       };
     });
   };

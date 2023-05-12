@@ -1,7 +1,7 @@
 import { Appearance } from "react-native";
 
 import colors from "./colors";
-console.log(":: sdfsdf");
+
 export const themes = {
   light: {
     colorScheme: "light",
