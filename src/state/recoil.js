@@ -14,9 +14,18 @@ export const counterState = atom({
   default: 0,
 });
 
+export const appState = atom({
+  key: "appState",
+  default: {
+    isAppInitialized: false,
+    splashScreenPlayed: false,
+  },
+});
+
 const useData = () => {
   const [data, setData] = useRecoilState(dataState);
   const [count, setCount] = useRecoilState(counterState);
+  const [app, setApp] = useRecoilState(appState);
 
   const getData = async () => {
     setData((prev) => {
@@ -40,12 +49,34 @@ const useData = () => {
     setCount((prev) => prev + 1);
   };
 
+  const setAppInit = () => {
+    setApp((prev) => {
+      return {
+        ...prev,
+        isAppInitialized: true,
+      };
+    });
+  };
+
+  const setSplashPlayed = () => {
+    setApp((prev) => {
+      return {
+        ...prev,
+        splashScreenPlayed: true,
+      };
+    });
+  };
+
   return {
     list: data.list,
     loading: data.loading,
     count,
     addOne,
     getData,
+    isAppInitialized: app.isAppInitialized,
+    splashScreenPlayed: app.splashScreenPlayed,
+    setAppInit,
+    setSplashPlayed,
   };
 };
 

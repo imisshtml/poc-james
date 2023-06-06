@@ -12,6 +12,7 @@ export const themes = {
     secondaryText: colors.black,
     primaryCTA: colors.success,
     secondaryCTA: colors.gray,
+    splashBackground: colors.black,
   },
   dark: {
     colorScheme: "dark",
@@ -22,6 +23,7 @@ export const themes = {
     secondaryText: colors.white,
     primaryCTA: colors.success,
     secondaryCTA: colors.gray,
+    splashBackground: colors.black,
   },
 };
 
